@@ -41,4 +41,10 @@ module.exports = function(sequelize, DataTypes) {
 		freezeTableName: true,
 		underscored: true
 	});
+
+	games.associate = function (models) {
+		games.hasMany(models.game_questions);
+		games.hasMany(models.player_response);
+		games.hasMany(models.user_game_attempts);	//wants key in u_g_a
+	};
 };

@@ -42,4 +42,10 @@ module.exports = function(sequelize, DataTypes) {
 		freezeTableName: true,
 		underscored: true
 	});
+
+
+	//Database associations are defined here
+	badges.associate = function (models) {
+	badges.belongsTo(models.users);
+  	};
 };

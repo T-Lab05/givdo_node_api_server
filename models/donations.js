@@ -55,4 +55,11 @@ module.exports = function(sequelize, DataTypes) {
 		freezeTableName: true,
 		underscored: true
 	});
+
+	//Database associations are defined here
+	donations.associate = function (models) {
+		donations.hasOne(models.organization);
+	};
+	
+	
 };

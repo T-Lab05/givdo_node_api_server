@@ -51,4 +51,12 @@ module.exports = function(sequelize, DataTypes) {
 		freezeTableName: true,
 		underscored: true
 	});
+
+	//Database associations are defined here
+	player_response.associate = function (models) {
+		player_response.belongsTo(models.users);
+		player_response.belongsTo(models.games);
+		player_response.belongsTo(models.question_options);
+	};
+
 };
